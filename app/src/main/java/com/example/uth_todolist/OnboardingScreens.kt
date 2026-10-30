@@ -46,6 +46,7 @@ fun SplashScreen(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        Spacer(modifier = Modifier.weight(1f))
         //icon
         Box(
             modifier = Modifier
@@ -62,9 +63,12 @@ fun SplashScreen(navController: NavController) {
             )
         }
         Spacer(Modifier.height(16.dp))
-        Text("UTH Todo", color = BackgroundWhite, fontSize = 28.sp, fontWeight = FontWeight.Bold)
+        Text("UTH Todo", color = BackgroundWhite, fontSize = 35.sp, fontWeight = FontWeight.Bold)
         Spacer(Modifier.height(8.dp))
-        Text("Việc học, việc nhà - gọn gàng mỗi ngày", color = BackgroundWhite, fontSize = 14.sp)
+        Text("Việc học, việc nhà - gọn gàng mỗi ngày", color = BackgroundWhite, fontSize = 16.sp)
+        Spacer(modifier = Modifier.weight(1f))
+        Text("Phiên bản 2.1.0", color = BackgroundWhite, fontSize = 12.sp)
+        Spacer(modifier = Modifier.height(40.dp))
     }
 }
 
@@ -125,11 +129,38 @@ fun OnboardingScreen(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                Image(painterResource(page.imageRes), null, Modifier.fillMaxWidth().height(250.dp))
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(50.dp)
+                        .height(300.dp)
+                        .clip(RoundedCornerShape(30.dp))
+                        .background(Color(0xFFF3F5F9)),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Image(
+                        painter = painterResource(page.imageRes),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(12.dp)
+                    )
+                }
                 Spacer(Modifier.height(40.dp))
-                Text(page.title, fontSize = 22.sp, fontWeight = FontWeight.Bold, color = TextDark)
+                Text(
+                    text = page.title,
+                    fontSize = 25.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = TextDark,
+                    modifier = Modifier.fillMaxWidth()
+                )
                 Spacer(Modifier.height(16.dp))
-                Text(page.description, fontSize = 14.sp, color = TextGray)
+                Text(
+                    text = page.description,
+                    fontSize = 16.sp,
+                    color = TextGray,
+                    modifier = Modifier.fillMaxWidth()
+                )
             }
         }
 
