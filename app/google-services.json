@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "950090965418",
+    "project_id": "uthtodolist",
+    "storage_bucket": "uthtodolist.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950090965418:android:55491d547afc8ee4394bd3",
+        "android_client_info": {
+          "package_name": "com.example.uth_todolist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKkmN031B-Q-iwCUfR0lSs88Ycf4-h8Fs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
