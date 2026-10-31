@@ -30,6 +30,7 @@ fun SetupNavGraph(navController: NavHostController) {
     NavHost(navController = navController, startDestination = Screen.Splash.route) {
         composable(Screen.Splash.route) { SplashScreen(navController) }
         composable(Screen.Onboarding.route) { OnboardingScreen(navController) }
+        composable(Screen.Login.route) { LoginScreen(navController) }
         composable(Screen.Home.route) {}
     }
 }
@@ -114,7 +115,7 @@ fun OnboardingScreen(navController: NavController) {
                 text = "Bỏ qua",
                 color = TextGray,
                 modifier = Modifier.clickable {
-                    navController.navigate(Screen.Home.route) {
+                    navController.navigate(Screen.Login.route) {
                         popUpTo(Screen.Onboarding.route) { inclusive = true }
                     }
                 }
@@ -171,7 +172,7 @@ fun OnboardingScreen(navController: NavController) {
                 text = if (pagerState.currentPage == pages.size - 1) "Bắt đầu ngay" else "Tiếp tục",
                 onClick = {
                     if (pagerState.currentPage == pages.size - 1) {
-                        navController.navigate(Screen.Home.route) { popUpTo(Screen.Onboarding.route) { inclusive = true } }
+                        navController.navigate(Screen.Login.route) { popUpTo(Screen.Onboarding.route) { inclusive = true } }
                     } else {
                         coroutineScope.launch { pagerState.animateScrollToPage(pagerState.currentPage + 1) }
                     }
